@@ -9,5 +9,11 @@ setup(
   author='Nikita Tsvetkov',
   author_email='nikitanovosibirsk@yandex.com',
   license='MIT',
-  packages=find_packages()
+  packages=find_packages(),
+  install_requires=[
+    'colorama>=0.3.3',
+    'district42>=0.5.4',
+    'valeera>=0.5.4',
+    'blahblah>=0.5.4'
+  ]
 )
