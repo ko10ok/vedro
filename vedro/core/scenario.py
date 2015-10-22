@@ -12,3 +12,7 @@ class Scenario:
   @property
   def steps(self):
     return [self._scope[step] for step in self._steps]
+
+  @property
+  def scope(self):
+    return self._scope

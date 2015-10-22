@@ -90,6 +90,7 @@ class TestRunner:
           exc_type, exc_value, exc_traceback = sys.exc_info()
           status = 'FAIL'
           errors.append(''.join(traceback.format_exception(exc_type, exc_value, exc_traceback)))
+          errors.append('Scope:\n{}'.format(scenario.scope['scope']))
       
       color = Fore.RED
       if status == 'OK':
