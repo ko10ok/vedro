@@ -7,6 +7,7 @@ import traceback
 import importlib
 from colorama import Fore, Back, Style
 from . import Config, Scope, Scenario, Profiler
+from ..decorators import static
 
 
 class TestRunner:
@@ -23,6 +24,7 @@ class TestRunner:
     builtins.cfg = self.cfg
     builtins.dump = lambda obj: print(json.dumps(obj, ensure_ascii=False, indent=2))
     builtins.Scope = Scope
+    builtins.static = static
 
   def inject_variables(self):
     for path in ('schemas', 'repositories', 'helpers', 'contexts'):
