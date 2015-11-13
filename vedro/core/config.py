@@ -20,6 +20,8 @@ class Config:
     return self.__getattr__(key)
 
   def __getattr__(self, name):
+    if name in self._parser:
+      return self._parser[name]
     if name in self._parser[self._main_namespace]:
       return self._parser[self._main_namespace][name]
     raise KeyError()
