@@ -1,3 +1,4 @@
+import sys
 from district42 import SchemaType
 from valeera import Validator, Formatter
 from .core import TestRunner
@@ -19,6 +20,8 @@ def run():
   test_runner.inject_variables()
   test_runner.load_scenarios()
 
-  test_runner.run_scenarios()
+  res = test_runner.run_scenarios()
 
   test_runner.remove_init_files()
+
+  sys.exit(int(not res))
